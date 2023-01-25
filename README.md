@@ -1,3 +1,6 @@
+
+![prmt_lang_logo](.github/prompting_logo_50.jpg?raw=true)
+
 # Prompting
 The un-offical language of prompt engineering
 
