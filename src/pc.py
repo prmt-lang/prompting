@@ -54,7 +54,13 @@ if __name__ == "__main__":
                 pass
 
             for match in matchs:
-                with open(match, 'r') as f:
+                # support [[filename.prmt]] and [[filename]] syntax
+                # check if match ends with .prmt
+                # if NOT append it
+                if not match.endswith('.prmt'):
+                    filename = match + '.prmt'
+
+                with open(filename, 'r') as f:
                     # get the text for match
                     match_text = f.read()
 
@@ -80,8 +86,6 @@ if __name__ == "__main__":
         model_response = "THIS IS A SAMPLE RESULT"
 
         for path in paths:
-            with open(path, 'w+') as f:
+            file_name = path + '.txt'
+            with open(file_name, 'w+') as f:
                 f.write(model_response)
-
-
-

@@ -16,9 +16,9 @@ TODO Create bootstrap script to install the pc and pcv
 create a sample prompt and execute it
 
 ```bash
-touch input & echo "Say hello world" > input
-touch hello_world & echo "[[input]]\n{{output}}" > hello_world
-pc hello_world
+touch input & echo "Say hello world" > input.prmt
+touch hello_world & echo "[[input]]\n{{output}}" > hello_world.prmt
+pc hello_world.prmt
 ```
 
 ## Help

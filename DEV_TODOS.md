@@ -64,3 +64,21 @@ Keep is simple. Integrate Early. Test.
 - create seperate "Learn Prompting" repo
     - create examples of different prompting stratedys
     - look at twitter, openai docs, and other resources to learn more about prompt engineering techniques
+
+- Syntax highlights for .prmt files
+    - create simple syntax highlighting standards
+    - implement Language Server: https://en.wikipedia.org/wiki/Language_Server_Protocol
+    - with a language server, we can serve syntax highlighting and code completion to IDEs and text editors.
+
+
+
+# Dev Infrastrucutre TODOS
+
+- consider using docker as a dev enviroment
+- use Black as a code formatter (for python)
+- setup pylint
+- Integrate Github Actions to perform CI checks
+    - Check for black formatting
+    - run pylint
+    - run tests
+    - deploy(?) hold off on this for a bit.
