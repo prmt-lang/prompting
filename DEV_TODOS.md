@@ -49,7 +49,6 @@ Keep is simple. Integrate Early. Test.
     - Keep it small initially, we don't have to support every package manager
         - A git clone + bootstrap bash/python script could be the way to go.
 
-
 - create simple syntax validation step before prompt composition
     - one edge case that needs to be caught is "{{[[something]]}}" is invalid syntax
     - perhaps we could check if each [[filename]] points to a real file? easy validation
@@ -60,6 +59,8 @@ Keep is simple. Integrate Early. Test.
 
 - Testing
     - read the code that has been written already, ensure code is tested
+    - Id reccomend the default python test lib
+        - https://docs.python.org/3/library/unittest.html
 
 - create seperate "Learn Prompting" repo
     - create examples of different prompting stratedys
@@ -69,6 +70,11 @@ Keep is simple. Integrate Early. Test.
     - create simple syntax highlighting standards
     - implement Language Server: https://en.wikipedia.org/wiki/Language_Server_Protocol
     - with a language server, we can serve syntax highlighting and code completion to IDEs and text editors.
+    - Resources
+        - https://www.youtube.com/watch?v=tlrSQiwvhi0
+        - https://www.youtube.com/watch?v=Cw9qCsetpLU
+        - https://youtu.be/H0p7tcUuJm0?t=319
+        - https://code.visualstudio.com/api/language-extensions/language-server-extension-guide
 
 
 
@@ -76,8 +82,10 @@ Keep is simple. Integrate Early. Test.
 
 - consider using docker as a dev enviroment
 - use Black as a code formatter (for python)
+    - https://black.readthedocs.io/en/stable/
 - setup pylint
 - Integrate Github Actions to perform CI checks
+    - build docker image with dependencies
     - Check for black formatting
     - run pylint
     - run tests

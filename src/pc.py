@@ -16,27 +16,43 @@ VERSION = 0.1
 # and returns VARIABLE_NAME
 VARIABLE_PATTERN = "\[\[(.*?)\]\]"
 
+# this regex look for {{VARIABLE_NAME}} pattern
 EXECUTION_PATTERN = "\{\{(.*?)\}\}"
+
+NESTED_COMPOSE_AND_EXECUTE = "\[\[\{\{(.*?)\}\}\]\]"
+NESTED_EXECUTE_AND_COMPSE = "\{\{\[\[(.*?)\]\]\}\}"
+
+# TODO write syntax verification logic
+def verify_syntax(text):
+    """
+    line: string input
+    return true or false based on syntax criteria
+    """
+    # check for nested compose and execute
+    # check for nested execute and compose
+    # how else could someone break the current system?
+    return True
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser("Prompting Compiler v{}".format(VERSION))
 
     parser.add_argument('prompts', default=[], type=argparse.FileType("r"), nargs='+',
                     help='a list of paths to the prompts that will be executed in order')
+    parser.add_argument('--print', '-p', action='store_true', help='print the composed prompt to std out')
 
     args = parser.parse_args()
 
+    # load prompt data
     prompt_texts = []
-
     for prompt in args.prompts:
         text = prompt.read()
+        verify_syntax(text)
         prompt_texts.append(text)
 
     # for each prompt text
     # iteratively build the prompt
     # run inference on the prompt and save it to the specified file
     # repeat
-
     for text in prompt_texts:
 
         # PROMPT CONSTRUCTION PHASE
@@ -64,6 +80,9 @@ if __name__ == "__main__":
                     # get the text for match
                     match_text = f.read()
 
+                    # need to verify syntax of loaded files
+                    verify_syntax(match_text)
+
                     # substitute the text for the variable
                     match_pattern = "\[\[{}\]\]".format(match)
                     new_prompt_text = re.sub(match_pattern, match_text, prompt_states[-1])
@@ -81,9 +100,16 @@ if __name__ == "__main__":
 
         final_prompt = re.sub(EXECUTION_PATTERN, "", final_prompt_w_possible_executions)
 
+        # adding a dump is nice, we can redirect output to a new file
+        # something like pc prompt_1 > prompt_dump.txt
+        if args.print:
+            print(final_prompt)
+
         # send prompt to user specified model w user api key
 
         model_response = "THIS IS A SAMPLE RESULT"
+
+        # print model response as well(?)
 
         for path in paths:
             file_name = path + '.txt'
