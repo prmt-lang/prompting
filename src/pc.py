@@ -39,6 +39,8 @@ if __name__ == "__main__":
     parser.add_argument('prompts', default=[], type=argparse.FileType("r"), nargs='+',
                     help='a list of paths to the prompts that will be executed in order')
     parser.add_argument('--print', '-p', action='store_true', help='print the composed prompt to std out')
+    parser.add_argument('--debug', '-d', action='store_true', help='print the states of the prompt composition process to std out')
+
 
     args = parser.parse_args()
 
@@ -90,6 +92,11 @@ if __name__ == "__main__":
                     # update the text
                     prompt_states.append(new_prompt_text)
 
+
+        if args.debug:
+            for index, state in enumerate(prompt_states):
+                print("state: {}\n{}\n".format(index, state))
+                print("End of state: {}\n".format(index))
 
         # PROMPT EXECUTION PHASE
 
