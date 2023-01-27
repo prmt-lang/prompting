@@ -75,6 +75,7 @@ Keep is simple. Integrate Early. Test.
         - https://www.youtube.com/watch?v=Cw9qCsetpLU
         - https://youtu.be/H0p7tcUuJm0?t=319
         - https://code.visualstudio.com/api/language-extensions/language-server-extension-guide
+        - https://www.toptal.com/javascript/language-server-protocol-tutorial
 
 
 
