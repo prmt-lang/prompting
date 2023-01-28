@@ -1,0 +1,6 @@
+Here is a poem written in the style of a famous poet. Based on the contents of the poem, can you guess who wrote it?
+```
+[[poem]]
+```
+
+{{output}}

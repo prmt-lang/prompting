@@ -1,0 +1,9 @@
+Write a poem in the style of [[poet]] that is four lines long in the form:
+```
+{line 1}
+{line 2}
+{line 3}
+{line 4}
+```
+
+```{{output}}
