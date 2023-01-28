@@ -2,6 +2,15 @@
 
 This folder contains examples of different prompting methods
 
-Perhaps this belongs in a seperate repo?
+Install the ***pc*** by following the readme in the root directory.
 
-TODO - create seperate "Learn Prompting" repo
+```
+pc prompt_1.prmt
+```
+
+Perform a simple chain
+```
+pc prompt_1.prmt prompt_2.prmt
+```
+
+TODO - create seperate "Learn Prompting" repo(?)

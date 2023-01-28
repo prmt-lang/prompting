@@ -7,10 +7,17 @@ The un-offical language of prompt engineering
 ## Installation
 download repo, set path variable, set api key and http endpoint for inferences
 
+Run the following command in the root directory of the project.  This command will add the prompting/src folder to your path which will allow you to run the PC anywhere.
+
+RUN THIS IN ~/YOUR/PATH/prompting
 ```
-TODO Create bootstrap script to install the pc and pcv
+export PATH=$(pwd)/src:$PATH
 ```
 
+If you want to automatically load the prompt composed each time, update the path in your .bashrc file to other profile file.
+```
+export PATH=/YOUR/PATH/TO/prompting/src:$PATH
+```
 
 ## Quick Start
 create a sample prompt and execute it

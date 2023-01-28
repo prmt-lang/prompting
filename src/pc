@@ -1,5 +1,5 @@
+#!/usr/bin/env python3
 """ Prompt Composer """
-
 
 import re
 import argparse
@@ -119,6 +119,6 @@ if __name__ == "__main__":
         # print model response as well(?)
 
         for path in paths:
-            file_name = path + '.txt'
+            file_name = path + '.prmt'
             with open(file_name, 'w+') as f:
                 f.write(model_response)
